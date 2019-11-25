@@ -47,7 +47,7 @@ try:
 			time.sleep(.5)
 		elif yellow == True:
 			logging.info("[NOTICE] The YELLOW button was pressed!")
-			os.system(arges["yellow_command"])
+			os.system(args["yellow_command"])
 			time.sleep(.5)
 		time.sleep(.05)
 except:
