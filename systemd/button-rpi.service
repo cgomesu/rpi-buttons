@@ -4,7 +4,7 @@ After=multi-user.target
 
 [Service]
 # Edit the directory below if you placed the folder elsewhere
-WorkingDirectory=/home/pi/scripts/button/
+WorkingDirectory=/opt/rpi-buttons/
 Type=simple
 
 # If you have permission issues, you might want to uncomment and edit the rows below
@@ -20,9 +20,6 @@ RestartSec=5
 
 # This ensures a clean exit when the service is stopped
 KillSignal=SIGINT
-
-# If you don't want to run it at full CPU, uncomment the line below and edit the %
-# CPUQuota=50%
 
 [Install]
 WantedBy=multi-user.target
