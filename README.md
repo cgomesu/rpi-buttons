@@ -6,7 +6,7 @@ This is a simple python script to run customized commands using three push butto
 ![rpi 4b wiring](https://i.imgur.com/IfLnKS6.png)
 
 # Usage
-``
+```
 python3 button.py --help
 usage: button.py [-h] [--red-gpio RED_GPIO] [--white-gpio WHITE_GPIO]
                  [--yellow-gpio YELLOW_GPIO] [--log-file LOG_FILE]
@@ -29,4 +29,4 @@ optional arguments:
   --yellow-command YELLOW_COMMAND
                         string: /path/to/yellow-button.sh RED button press
                         script. default=yellow-button.sh
-``
+```
