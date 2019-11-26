@@ -5,6 +5,25 @@ This is a simple python script to run customized commands using three push butto
 - The recommended circuit features a current limiting resistor (1k ohms) as well as a pull-down resistor (10k ohms)
 ![rpi 4b wiring](https://i.imgur.com/IfLnKS6.png)
 
+# Installation
+- Raspbian OS:
+```
+apt-get update
+apt-get install git
+cd /opt
+git clone https://github.com/cgomesu/rpi-buttons.git
+# IFF you have permission issues, run 'sudo chown -R pi:sudo rpi-buttons' to change the folder ownership to user pi.
+cd rpi-buttons
+# Add a command that will be executed whenever each button is pressed):
+nano red-button.sh
+nano white-button.sh
+nano yellow-button.sh
+# Run the script
+python3 button.py
+# Check log
+tail -f /opt/rpi-buttons/button.log
+```
+
 # Usage
 ```
 python3 button.py --help
@@ -29,4 +48,16 @@ optional arguments:
   --yellow-command YELLOW_COMMAND
                         string: /path/to/yellow-button.sh RED button press
                         script. default=yellow-button.sh
+```
+
+# Running as a service (systemd)
+```
+# IFF you have permission issues, just add 'sudo' before each command
+cp /opt/rpi-buttons/systemd/button-rpi.service /lib/systemd/system/
+systemctl enable button-rpi.service
+systemctl start button-rpi.service
+# Check status it's running without issues
+systemctl status button-rpi.service
+# Check log
+tail -f /opt/rpi-buttons/button.log
 ```
