@@ -1,8 +1,8 @@
 import RPi.GPIO as GPIO
-import os
 import time
 import argparse
 import logging
+from subprocess import Popen
 
 
 ap = argparse.ArgumentParser()
@@ -39,15 +39,15 @@ try:
 		yellow = GPIO.input(args["yellow_gpio"])
 		if red == True:
 			logging.info("[NOTICE] The RED button was pressed!")
-			os.system(args["red_command"])
+			Popen(["/bin/bash", args["red_command"]])
 			time.sleep(.5)
 		elif white == True:
 			logging.info("[NOTICE] The WHITE button was pressed!")
-			os.system(args["white_command"])
+			Popen(["/bin/bash", args["white_command"]])
 			time.sleep(.5)
 		elif yellow == True:
 			logging.info("[NOTICE] The YELLOW button was pressed!")
-			os.system(args["yellow_command"])
+			Popen(["/bin/bash", args["yellow_command"]])
 			time.sleep(.5)
 		time.sleep(.05)
 except:
