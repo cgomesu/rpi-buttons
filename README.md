@@ -1,8 +1,17 @@
 # Description
 This is a simple python script to run customized commands using three push buttons connected to a Raspberry Pi 3B's general purpose input/output (GPIO) pins.  (Of course, it's also compatible with RPi 3B+ and any other RPi that has the same GPIO version as the 3B.)
 
+# Materials
+- 1x mini-breadboard
+- 3x push button
+- 5x male-to-female dupont compatible jumper cable
+- 4x male-to-male simple jumper cable
+- 3x 1k ohms resistor
+- 3x 10k ohms resistor
+
 # Wiring
 - The recommended circuit features a current limiting resistor (1k ohms) as well as a pull-down resistor (10k ohms)
+
 ![rpi 4b wiring](https://i.imgur.com/IfLnKS6.png)
 
 # Installation
